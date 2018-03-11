@@ -1,0 +1,48 @@
+{% block content %}
+<html>
+<title> Movie Form</title>
+
+<div>
+<form action="{{ url_for('home') }}" method="POST">
+    <h3>{{ form.name.label() }}{{ form.name() }}</h3><br>
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+</div>
+</html>
+{% endblock %}
+
+<div>
+{% for message in get_flashed_messages() %}
+	<strong>{{ message }}</strong>
+{% endfor %}
+</div>
+
+<br>
+<p>------------</p>
+
+
+<h3>User Info</h3>
+<a href="{{url_for('home')}}">Home</a><br>
+<a href="{{url_for('movie_list')}}">Add Movie To List</a>
+<ul>
+	<li><a href="{{url_for('all_names')}}">App Visitors</a></li>
+	<li><a href="{{url_for('all_movies')}}">List of Movies Saved by Visitors</a></li>
+</ul>
+
+<h3>Rate a Movie</h3>
+<ul>
+    <li><a href="{{ url_for('rate')}}">Rate a movie</a></li>
+	<li><a href="{{ url_for('movies_and_ratings')}}">Movies and Ratings</a></li>
+	<li><a href="{{url_for('count')}}">Number of Movies Saved</a></li>
+</ul>
+<h3>Search for a Movie</h3>
+
+<ul>
+    <li><a href="{{ url_for('movie')}}">Search for a movie review</a></li>
+</ul>
+
+
+
+
+

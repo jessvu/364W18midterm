@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if num_movies==1 %}
+<b>{{ num_movies }}</b> movie saved.
+{% else %}
+<b>{{ num_movies }}</b> movies saved.
+{% endif %}
+
+{% endblock %}

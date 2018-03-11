@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<title> Movie Form</title>
+<body>
+<form action="http://localhost:5000/getmovie" method = "GET">
+  {{ form.hidden_tag() }}
+<!--   {% for message in get_flashed_messages() %}
+  {{ message }}
+  {% endfor %} -->
+<h3>{{ form.user.label }}: {{ form.user() }}</h3>
+<h3>{{ form.movie.label }}: {{ form.movie() }}</h3>
+<h3>{{ form.rating.label }} {{ form.rating() }}</h3>
+{{ form.submit() }}
+</form>
+<a href="{{ url_for('movies_and_ratings')}}">See all movies and ratings saved</a><br>
+<a href="{{ url_for('movie')}}">Search for a movie review</a>
+</body>
+</html>
+
+{% endblock %}
+

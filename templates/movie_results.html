@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Your Movie Rating:</h2>
+<p>You gave <i>{{ movie }}</i> <b>{{ rating }}</b> out of 5 stars!</p>
+
+<h3>Similar Titles</h3>
+<ul>
+    {% for r in objects %}
+        <li>
+        <h4>{{ r['display_title'] }}</h4>
+        <div>Read the review <a href={{ r['link']['url'] }}>here</a>.</div></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

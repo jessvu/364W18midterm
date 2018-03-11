@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<title> Movie Form</title>
+<body>
+<form action="http://localhost:5000/movie_list" method = "POST">
+  {{ form.hidden_tag() }}
+<!--   {% for message in get_flashed_messages() %}
+  {{ message }}
+  {% endfor %} -->
+<h3>{{ form.your_movies.label }}: {{ form.your_movies() }}</h3>
+{{ form.submit() }}
+</form>
+</body>
+</html>
+
+{% endblock %}

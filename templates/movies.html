@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Movie Ratings</h2>
+<ul>
+{% for rt in ratings %}
+    <li><p><i>{{ rt[2] }}</i> gets <strong>{{ rt[1] }}</strong> star(s)<br>-from {{ rt[0] }}</p></li>
+
+{% endfor %}
+</ul>
+
+{% if not ratings %}
+There are no saved movies to show.
+{% endif %}
+
+
+<!-- <div>
+{% for message in get_flashed_messages() %}
+<strong>*** {{ message }} ***</strong>
+{% endfor %}
+</div> -->
+
+
+{% endblock %}
